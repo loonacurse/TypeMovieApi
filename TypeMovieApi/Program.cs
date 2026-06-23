@@ -12,10 +12,9 @@ Constants.selected_list = Constants.database.GetCollection<BsonDocument>("select
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
-// äîáàâëåíèå Swagger
+
 builder.Services.AddSwaggerGen(options =>
 {
-    // çàäàíèå ïàðàìåòðîâ Swagger
     options.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "My API",
@@ -25,7 +24,6 @@ builder.Services.AddSwaggerGen(options =>
 
 var app = builder.Build();
 
-// íàñòðîéêà Swagger
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
